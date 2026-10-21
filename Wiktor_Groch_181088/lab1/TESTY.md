@@ -28,3 +28,9 @@ Autor: Wiktor Groch
 ## roznica miedzy ID I NAME :
 1. **Hipoteza:** Usunięcie atrybutu `name` z pola `input` typu email (przy zachowaniu `id="email"` oraz `<label for="email">`) sprawi, że walidacja w przeglądarce zadziała, ale wpisany adres e-mail nie zostanie dołączony do adresu URL po wysłaniu formularza.
 2. **Wyjaśnienie i wnioski:** W adresie URL brakuje klucza i wartości dla pola e-mail. Przeglądarka przesyła do serwera / do adresu wyłącznie te pola, które posiadają atrybut `name`. Atrybut `id` służy tylko do identyfikacji wewnątrz przeglądarki (do połączenia z etykietą `label` oraz stylów CSS).
+
+
+## URUCHOMIENIE STRONY
+| Stowrzylem **srodowisko** (postawione na serverze Oracle cloud) w ktorym bede testowal i wrzucal moje prace z zajec | W srodowisku da sie odpalic strone jak i przejrzec caly kod z danego zadania |
+| Cale srodowisko zostalo stworzone z pomoca AI poniewaz nie jestem krolem html'a i php'a |
+| **link** http://130.162.217.201:8080 |
