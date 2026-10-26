@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light" id="theme">
+    <head>
+        <title>Sklep z Kaczkami</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/main.js" defer></script>
+    </head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-current="page">Katalog</a></li>
+                <li><a href="produkt.html">Produkty</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><button id="darktheme" type="button" aria-pressed="false">Dark Theme</button></li>
+            </ul>
+            <section class="sekcja-zegar">
+                <p>Czas: <span id="zegar"></span></p>
+                <p>Data: <span id="data"></span></p>
+                <button id="stop" type=button>Zegar Stop</button>
+                <button id ="start" type=button>Zegar Start</button>
+            </section>
+        </nav>
+        <h1>Sklep z Kaczkami</h1>
+    </header>
+    <main class="container">
+        
+        <input type="search" id="szukaj" placeholder="wyszukaj..." >
+        <p id="results-count">Liczba wyników: 3</p>
+        <p id="no-results-msg" hidden>Brak produktów spełniających kryteria wyszukiwania.</p>
+
+        <section class="katalog">
+            <article class="card">
+                <h2><a href="produkt.html">Zolta kaczka</a></h2>
+                <figure>
+                    <a href="produkt.html">
+                        <img src="img/KACZKA.png" alt="zolta kaczka" width="300" height="300">
+                    </a>
+                </figure>
+                <p>Zolta kaczka z korona</p>
+                <p class="cena">Cena: <strong>100 PLN</strong></p>
+            </article>
+
+
+            <article class="card">
+                <h2>Kaczka koszykarz</h2>
+                <figure>
+                        <img src="img/KACZKA_KOSZYKARZ.png" alt="zolta kaczka" width="300" height="300">
+                </figure>
+                <p>Zolta kaczka w stroju koszykarskim</p>
+                <p class="cena">Cena: <strong>150 PLN</strong></p>
+            </article>
+
+
+            <article class="card">
+                <h2>Kaczka z Nartuto</h2>
+                <figure>
+                        <img src="img/KACZKA_NARUTO.png" alt="zolta kaczka" width="300" height="300">
+                </figure>
+                <p>Zolta kaczka w stroju z anime Naruto</p>
+                <p class="cena">Cena: <strong>200 PLN</strong></p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Autor: Wiktor Groch</p>
+        <a href="index.html" aria-current="page">Katalog</a>
+        <a href="produkt.html">Produkt</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="https://github.com/Torochh/ProgAppWWW_Groch" target="_blank">GitHub</a>
+    </footer>
+</body>
+</html>

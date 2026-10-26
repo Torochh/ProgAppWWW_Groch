@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>To jest kontakt lab1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/main.js" defer></script>
+    </head>
+<body>
+    <header>
+        <h1>Przykladowy Formularz</h1>
+        <nav>
+        <p>„Formularz demonstracyjny. Dane pojawią się w adresie strony; zapytanie nie
+        zostanie zapisane ani wysłane e-mailem”. Poprawne wysłanie przeładuje stronę z parametrami w
+        URL. Walidacja przeglądarki pomaga użytkownikowi, ale w docelowym sklepie dane trzeba też
+        sprawdzać na serwerze.</p>
+        <ul>
+            <li><a href="index.html">Katalog</a></li>
+            <li><a href="produkt.html">Produkty</a></li>
+            <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+            <li><button id="darktheme" type="button" aria-pressed="false">Dark Theme</button></li>
+        </ul>
+    </nav>
+    </header>
+
+
+    <main class="container">
+        <section class="form">
+            <form method="get" action="kontakt.html">
+            <label for="email">:Email</label>
+            <input type="email" name="email" required id="email">
+            <label for="lista">:Produkt</label>
+            <select name="produkt" required id="lista">
+                    <option value=""> -- Wybierz -- </option>
+                    <option value="Zolta kaczka">Kaczka</option>
+                    <option value="Zolta kaczka z koszykarzem">Kaczka z koszykarzem</option>
+                    <option value="Zolta kaczka z Naruto">Kaczka z Naruto</option>
+            </select>
+            <label for="ilosc">Podaj ilość min 1 max 5</label>
+            <input type="number" name="ilosc" min="1" max="5" required step="1" id="ilosc">
+            <label for="wiadomosc">:Wiadomosc min 10 max 500 znakow</label>
+            <textarea name="wiadomosc" required minlength="10" maxlength="500" id="wiadomosc"></textarea >
+            <button type="submit">Sprawdz zapytanie</button>
+        </form>
+        </section>
+    </main>
+
+    
+    <footer>
+        <p>Autor: Wiktor Groch</p>
+        <a href="index.html">Katalog</a>
+        <a href="produkt.html" >Produkt</a>
+        <a href="kontakt.html" aria-current="page">Kontakt</a>
+        <a href="https://github.com/Torochh/ProgAppWWW_Groch" target="_blank">GitHub</a>
+    </footer>
+</body>
+</html>
