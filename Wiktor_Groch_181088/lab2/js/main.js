@@ -97,3 +97,5 @@ function szukanieF(){
 }
 szukanie.addEventListener('input',szukanieF);
 
+
+
