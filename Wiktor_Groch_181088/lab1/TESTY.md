@@ -34,3 +34,4 @@ Autor: Wiktor Groch
 | Stowrzylem **srodowisko** (postawione na serverze Oracle cloud) w ktorym bede testowal i wrzucal moje prace z zajec | W srodowisku da sie odpalic strone jak i przejrzec caly kod z danego zadania |
 | Cale srodowisko zostalo stworzone z pomoca AI poniewaz nie jestem krolem html'a i php'a |
 | **link** http://130.162.217.201:8080 |
+| Zrodlo grafik : https://krakowduckstore.pl/
