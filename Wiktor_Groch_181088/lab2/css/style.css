@@ -117,13 +117,15 @@ button {
   color: var(--tekst-pola);
 }
 
-button[type="submit"] {
+button {
   background-color: var(--kolor-glowny);
   color: #ffffff;
   border: none;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
   padding: 12px;
+
 }
 
 .card {
