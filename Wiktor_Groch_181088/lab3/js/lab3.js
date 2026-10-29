@@ -39,40 +39,45 @@ let isBi = false;
 let isFo = false;
 
 $(but2).on({
+  mousedown: function() {
+    $(this).trigger('focus');
+  },
 
-	mouseenter: function() {
-		isBi = true;
-		$(this).attr('aria-pressed',true).stop(true, false).animate({
-			width : 220,
-			height : 120
-		}, 300);
-	},
+  mouseenter: function() {
+    isBi = true;
+    $(this).attr('aria-pressed', true).stop(true, false).animate({
+      width: 220,
+      height: 120
+    }, 300);
+  },
 
-	mouseleave: function(){
-		isBi = false;
-		if (!isBi && !isFo){
-			$(this).attr('aria-pressed',isBi).stop(true,false).animate({
-			width : 160,
-			height: 90
-			}, 300);
-		}
-	},
-	blur: function(){
-		isFo = false;
-		if (!isBi && !isFo){
-			$(this).attr('aria-pressed',isFo).stop(true,false).animate({
-				width : 160,
-				height: 90
-			}, 300);	
-		}
-	},
-	focus: function(){
-		isFo = true;
-		$(this).attr('aria-pressed',true).stop(true,false).animate({
-			width : 160,
-			height: 90
-		}, 300);
-	}
+  mouseleave: function() {
+    isBi = false;
+    if (!isBi && !isFo) {
+      $(this).attr('aria-pressed', false).stop(true, false).animate({
+        width: 160,
+        height: 90
+      }, 300);
+    }
+  },
+
+  focus: function() {
+    isFo = true;
+    $(this).attr('aria-pressed', true).stop(true, false).animate({
+      width: 220,
+      height: 120 
+    }, 300);
+  },
+
+  blur: function() {
+    isFo = false;
+    if (!isBi && !isFo) {
+      $(this).attr('aria-pressed', false).stop(true, false).animate({
+        width: 160,
+        height: 90
+      }, 300);
+    }
+  }
 });
 
 //----------------------- GUZIK A3 ----------------------------
@@ -124,3 +129,37 @@ $(reset).on('click', function(){
 
 
 });
+
+
+//--------------------STATUS PHP------------------
+const $statusButton = $('#status');
+const $statusMsg = $('#status-msg');
+
+if ($statusButton.length && $statusMsg.length) {
+  $statusButton.on('click', function(e) {
+    e.preventDefault();
+
+    $statusButton.prop('disabled', true);
+    $statusMsg.text('Sprawdzanie stanu serwera...');
+
+    $.ajax({
+      url: 'status.php',
+      method: 'GET',
+      dataType: 'text',
+      timeout: 5000
+    })
+    .done(function(response) {
+      $statusMsg.text(response);
+    })
+    .fail(function(jqXHR, textStatus) {
+      if (textStatus === 'timeout') {
+        $statusMsg.text('Blad: Przekroczono czas oczekiwania na odpowiedz serwera (5s).');
+      } else {
+        $statusMsg.text(`Blad polaczenia: ${jqXHR.status} (${jqXHR.statusText || 'Brak odpowiedzi'})`);
+      }
+    })
+    .always(function() {
+      $statusButton.prop('disabled', false);
+    });
+  });
+}
