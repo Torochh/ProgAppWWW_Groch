@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light" id="theme">
+    <head>
+        <title>Przykladowy Formularz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/main.js" defer></script>
+    </head>
+<body>
+    <header>
+        <h1>Kontakt</h1>
+        <nav>
+            <p>Podgląd lokalny. Formularz nie wysyła wiadomości. Ceny i walidacja w przeglądarce są demonstracją; w docelowym sklepie serwer musi je niezależnie sprawdzić.</p>
+            <ul>
+                <li><a href="index.html">Katalog</a></li>
+                <li><a href="produkt.html">Produkty</a></li>
+                <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+                <li><button id="darktheme" type="button" aria-pressed="false">Dark Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="form">
+            <form id="formularz-kontakt" method="get" action="kontakt.html">
+
+                <label for="email">:Email</label>
+                <input type="email" name="email" required id="email">
+
+                <label for="lista">:Produkt</label>
+                <select name="produkt" required id="lista">
+                    <option value=""> -- Wybierz -- </option>
+                    <option value="klasyczna kaczka">Kaczka</option>
+                    <option value="kaczka koszykarz">Kaczka z koszykarzem</option>
+                    <option value="kaczka z Naruto">Kaczka z Naruto</option>
+                </select>
+
+                <label for="ilosc">Podaj ilość min 1 max 5</label>
+                <input type="number" name="ilosc" min="1" max="5" required step="1" id="ilosc">
+
+                <output id="podglad-ceny" for="lista ilosc" aria-live="polite">Wybierz produkt i poprawną ilość (całkowita 1–5), aby zobaczyć wycenę.</output>
+
+                <label for="wiadomosc">:Wiadomosc min 10 max 500 znakow</label>
+                <textarea name="wiadomosc" required minlength="10" maxlength="500" id="wiadomosc"></textarea>
+                <p id="blad-wiadomosc" role="alert" hidden></p>
+
+                <button type="submit">Sprawdz zapytanie</button>
+            </form>
+        </section>
+
+        <section id="podsumowanie-sekcja" hidden>
+            <h2>Podsumowanie zapytania</h2>
+            <dl>
+                <dt>Produkt:</dt>
+                <dd id="podsumowanie-produkt"></dd>
+
+                <dt>Ilość:</dt>
+                <dd id="podsumowanie-ilosc"></dd>
+
+                <dt>Wartość:</dt>
+                <dd id="podsumowanie-wartosc"></dd>
+
+                <dt>Wiadomość:</dt>
+                <dd id="podsumowanie-wiadomosc"></dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer>
+        <p>Autor: Wiktor Groch</p>
+        <a href="index.html">Katalog</a>
+        <a href="produkt.html">Produkt</a>
+        <a href="kontakt.html" aria-current="page">Kontakt</a>
+        <a href="https://github.com/Torochh/ProgAppWWW_Groch" target="_blank">GitHub</a>
+    </footer>
+</body>
+</html>
