@@ -1,7 +1,5 @@
 <?php
-// ==========================================
-// 1. KONFIGURACJA I MAPA PODSTRON (Zadanie 1 i 2)
-// ==========================================
+// KONFIGURACJA I MAPA PODSTRON
 $idProjektu = "sklep-z-kaczkami-v5";
 
 $mapaStron = [
@@ -23,7 +21,7 @@ $mapaStron = [
     ]
 ];
 
-
+// ODCZYT PARAMETRU idp I WALIDACJA
 $idpRaw = $_GET['idp'] ?? '';
 $wybranyKlucz = null;
 $bladKomunikat = null;
@@ -51,6 +49,7 @@ if ($wybranyKlucz !== null) {
         $sciezkaPliku = $pelnaSciezka;
     }
 }
+// HTML (header, main, footer)
 ?>
 <!DOCTYPE html>
 <html lang="pl" data-theme="light" id="theme">
