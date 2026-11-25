@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS `sklep_z_kaczkami`
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
-USE `moja_strona`;
+USE `sklep_z_kaczkami`;
 
 CREATE TABLE IF NOT EXISTS `page_list` (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
