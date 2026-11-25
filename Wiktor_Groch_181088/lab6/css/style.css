@@ -164,6 +164,19 @@ button {
   padding: 16px;
 }
 
+.table-responsive {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.komunikat-sukces {
+  color: #198754;
+}
+
+.komunikat-blad {
+  color: #dc3545;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

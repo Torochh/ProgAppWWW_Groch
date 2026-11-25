@@ -1,25 +1,25 @@
 Autor: Wiktor Groch
 
-## Adres domyślny i menu:
-**|Oczekiwany wynik:** index.php i index.php?idp= pokazują stronę główną. Odnośniki otwierają właściwe treści ze wspólnym szablonem i poprawnym tytułem.
+## Odczyt i aktualizacja treści :
+**|Oczekiwany wynik:** index.php i ?idp= otwierają glowna z HTTP 200. Zmień treść w phpMyAdmin: po odświeżeniu widać zmianę bez edycji plików PHP i HTML.
 **|Otrzymany wynik:** Zgodne z oczekiwanym
-## Nieznany lub tablicowy klucz:
-**|Oczekiwany wynik:** ?idp=nieznana i ?idp[]=filmy dają HTTP 404 i odnośnik powrotny, bez ostrzeżeń PHP.
+## Nowa strona i menu:
+**|Oczekiwany wynik:** Dodaj opublikowany rekord z nowym aliasem. Link pojawia się w menu i otwiera stronę bez zmiany kodu PHP. Aktywny link jest oznaczony.
 **|Otrzymany wynik:** Zgodne z oczekiwanym
-## Próba podania ścieżki:  
-**|Oczekiwany wynik:** ?idp=..%2Fstatus.php daje HTTP 404. Zawartość status.php nie zostaje dołączona
+## Szkic i publikacja:  
+**|Oczekiwany wynik:** Rekord ze statusem 0 znika z menu, a jego bezpośredni adres zwraca 404. Po zmianie statusu na 1 jest widoczny. Próba dodania identycznego aliasu jest odrzucana przez bazę.
 **|Otrzymany wynik:** Zgodne z oczekiwanym
-## Brak pliku widoku: 
-**|Oczekiwany wynik:** Zmień tymczasowo nazwę html/filmy.html. Adres ?idp=filmy zwraca HTTP 500 bez ujawnienia ścieżki systemowej.
+## Błędne dane w adresie: 
+**|Oczekiwany wynik:** ?idp=nieznana i ?idp[]=filmy dają 404. Jako idp sprawdź też ../cfg.php oraz tekst ' OR 1=1--. Każda próba daje 404 bez ostrzeżeń PHP.
 **|Otrzymany wynik:** Zgodne z oczekiwanym
-## Strona główna i AJAX: 
-**|Oczekiwany wynik:** Na stronie głównej działają style, grafiki i animacje. W panelu Sieć widać udane żądanie do status.php, a na stronie jego wynik.
+## Awaria bazy : 
+**|Oczekiwany wynik:** Ustaw tymczasowo błędny port w konfiguracji. Strona zwraca 500 bez szczegółów technicznych, a lokalny log pozwala ustalić przyczynę.
 **|Otrzymany wynik:** Zgodne z oczekiwanym
-## Katalog i sesja po migracji: 
-**|Oczekiwany wynik:** Otwórz katalog z menu i użyj filtra. Zapisz poprawny wybór: POST 303, potem GET 200. Wróć na stronę główną, otwórz Filmy i ponownie wejdź do katalogu. Zapisany wybór nadal jest widoczny.
+## Funkcje po migracji: 
+**|Oczekiwany wynik:** Działają style, obrazy, animacje, AJAX i trzy filmy. Katalog filtruje produkty i zapisuje wybór: POST 303, potem GET 200. Wybór pozostaje po przejściu między podstronami.
 **|Otrzymany wynik:** Zgodne z oczekiwanym
-## Filmy i układ mobilny:
-**|Oczekiwany wynik:** Trzy filmy można uruchomić, odnośniki działają, a przy szerokości 360 px strona nie przewija się w poziomie.
+## Odtworzenie środowiska:
+**|Oczekiwany wynik:** Utwórz pustą bazę testową. Zaimportuj schemat i dane, uzupełnij lokalną konfigurację. Projekt uruchamia się zgodnie z README, także z polskimi znakami.
 **|Otrzymany wynik:** Zgodne z oczekiwanym
 
 
